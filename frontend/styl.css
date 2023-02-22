@@ -1,0 +1,156 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: "ubuntu";
+  
+}
+img {
+    width: 100%;
+}
+header {
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 50px;
+    background:white;
+}
+header .header-left {
+    display: flex;
+    align-items: center;
+}
+header .header-left .logo {
+    width: 140px;
+}
+header .header-left nav {
+    margin-left: 50px;
+}
+header .header-left nav ul {
+    display: flex;
+}
+nav ul li a {
+    display: block;
+    color:black;
+    font-size: 20px;
+    padding: 5px 15px;
+    transition: 0.2s;
+}
+nav ul li a:hover,
+nav ul li a.active {
+    color: rgb(78, 206, 28);
+}
+nav .login-signup {
+    display: none;
+}
+header .header-right {
+    display: flex;
+    align-items: center;
+}
+header .login-signup {
+    color: #cfd9e0;
+    font-weight: bold;
+}
+header .login-signup a {
+    display: inline-block;
+    color: #0b2239;
+    background: #4ad295;
+    padding: 5px 12px;
+    border-radius: 5px;
+}
+header .header-right .hamburger {
+    margin-left: 20px;
+    cursor: pointer;
+    display: none;
+}
+header .header-right .hamburger div {
+    width: 30px;
+    height: 2px;
+    margin: 6px 0;
+    background: black;
+}
+#feed{
+ 
+    display: flex;
+    justify-content: space-evenly
+}
+.conin h1{
+font-size: 50px;
+
+}
+#conl{
+    border:solid red px;
+}
+#conl img{}
+
+@media only screen and (max-width: 500px) {
+    #feed{
+        border: #dd7c0d solid 1px;
+        display: block;
+    }
+    .conin h1{
+    font-size: 40px;
+    text-align: center;
+}
+.conin p{
+    text-align: center;
+    font-size: 20px;
+}
+#conl img{ width: 100%;}
+}
+@media only screen and (max-width: 1000px) {
+    header {
+        padding: 0 20px;
+    }
+    header .header-right .hamburger {
+        display: block;
+    }
+    header .header-left nav {
+        margin: 0;
+        position: absolute;
+        top: -100%;
+        left: 0;
+        width: 100%;
+        height: fit-content;
+        background-color: #111010;
+        padding: 30px;
+       
+        text-align: center;
+        z-index: -1;
+    }
+    header .header-left nav.active {
+        top: 70px;
+    }
+    header .header-left nav ul {
+        display: block;
+    }
+}
+@media only screen and (max-width: 500px) {
+    nav .login-signup {
+        
+        display: block;
+        margin-top: 20px;
+    }
+    header .header-right .login-signup {
+        display: none;
+      
+    }
+}
+#complogo{
+    
+    display: flex;
+    justify-content: space-evenly
+}
+#complogo img{
+width: 7%;
+}
+#text{
+    padding-top: 3%;
+    text-align: center;
+}
+#text2{
+    padding-top: 3%;
+    text-align: center;
+}
