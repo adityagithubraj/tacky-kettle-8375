@@ -1,0 +1,30 @@
+#container{
+    border: solid px rebeccapurple;
+    width: 20%;
+    height: 40%;
+    margin-left: 40%;
+}
+.img img{
+    width: 100%;
+
+}
+.img{
+    border: solid red px;
+    width: 15%;
+    margin-left: 40%;
+}
+#name{
+    padding: 5%;
+    margin-top: 5%;
+    border: solid black 1px;
+}
+#email{
+    padding: 5%;
+    margin-top: 5%;
+    border: solid black 1px;
+}
+#pass{
+    margin-top: 5%;
+    padding: 5%;
+    border: solid black 1px;
+}

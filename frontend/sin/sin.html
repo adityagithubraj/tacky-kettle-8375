@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="./sin.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="img">
+        <img src="../Futuristic Modern Black and White Logo (1).png" alt="">
+    </div>
+    <div id="container">
+<h1>Singnup Page</h1>
+<input type="text" id="name" placeholder="name">
+<input type="text" id="email" placeholder="email">
+<input type="password" id="pass" placeholder="password"><br><br>
+<button onclick="sinFun()">Sign Up</button>
+    </div>
+</body>
+</html>
+<script>
+const sinFun=()=>{
+    const payload={
+        name:document.getElementById("name").value,
+        email:document.getElementById("email").value,
+        pass:document.getElementById("pass").value
+    }
+    
+    fetch("http://localhost:8080/user/register",{
+        method:"POST",
+        headers:{
+            "Content-type":"application/json"
+        },
+        body:JSON.stringify(payload)
+    })
+    .then(res=>po(res))
+    .catch(err=>console.log(err))
+
+}
+</script>
