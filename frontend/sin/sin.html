@@ -5,18 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <link rel="stylesheet" href="./sin.css">
-    <title>Document</title>
+    <title>SIGN UP </title>
 </head>
 <body>
     <div class="img">
         <img src="../Futuristic Modern Black and White Logo (1).png" alt="">
     </div>
     <div id="container">
-<h1>Singnup Page</h1>
+<h1>SIGN UP HERE</h1>
 <input type="text" id="name" placeholder="name">
 <input type="text" id="email" placeholder="email">
 <input type="password" id="pass" placeholder="password"><br><br>
-<button onclick="sinFun()">Sign Up</button>
+<button class="but" onclick="sinFun()">Sign Up</button>
+<br><br>
+<a href="">LOGIN her</a>
     </div>
 </body>
 </html>
@@ -35,7 +37,7 @@ const sinFun=()=>{
         },
         body:JSON.stringify(payload)
     })
-    .then(res=>po(res))
+    .then(res=>alert("sing in"))
     .catch(err=>console.log(err))
 
 }
