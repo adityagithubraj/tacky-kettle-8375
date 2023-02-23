@@ -1,29 +1,26 @@
 const express=require("express");
 const connection=require("./config/db")
 const {userRouter}=require("./routes/user.route")
-const {postRouter}=require("./routes/posts.route")
-const {authenticate}=require("./middlewares/auth.middleware")
-
-
-
-const app=express()
-const cors=require("cors");
-require ("dotenv").config();
-app.use(express.json())
+// const {noteRouter}=require("./routes/product.route")
+// const {authenticate}=require("./middlewares/auth")
+const app=express();
+const cors=require("cors")
+require("dotenv").config();
+app.use(express.json());
 app.use(cors());
 
-
 app.use("/user",userRouter)
-app.use(authenticate)
-app.use("/posts",postRouter)
+// app.use(authenticate)
+// app.use("/notes",noteRouter)
+
+
 
 app.listen(process.env.port,async()=>{
     try {
         await connection;
-        console.log("connected to db");
-        
+        console.log("connected to DataBase")
     } catch (error) {
-        console.log(error.message);
+        console.log(error.message)
     }
-    console.log("runig at port 4040");
+    console.log("sever is running at 8080")
 })
