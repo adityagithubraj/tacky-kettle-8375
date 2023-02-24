@@ -83,7 +83,7 @@ font-size: 50px;
 #conl{
     border:solid red px;
 }
-#conl img{}
+
 
 @media only screen and (max-width: 500px) {
     #feed{
@@ -153,4 +153,159 @@ width: 7%;
 #text2{
     padding-top: 3%;
     text-align: center;
+}
+
+.in{
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    width: 20%;
+    padding-left: 1%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    background-color: aliceblue;
+    border-radius: 3%;
+}
+.in img{
+    width: 100%;
+}
+#product :hover{
+    background-color: #4ad295;
+}
+#product{
+    margin-top: 3%;
+    display: flex;
+    justify-content: space-evenly
+}
+
+@media only screen and (max-width: 600px){
+    .in{
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+        width: 90%;
+        padding-left: 1%;
+        padding-top: 1%;
+        padding-bottom: 1%;
+        background-color: aliceblue;
+        border-radius: 3%;
+    }
+    .in img{
+        width: 100%;
+    }
+    #product :hover{
+        background-color: #4ad295;
+    }
+    #product{
+        margin-top: 3%;
+        display: grid;
+ gap: 2%;
+        
+        grid-template-columns: repeat(1,300px);
+
+    }
+}
+#feed2{
+    display: flex;
+    margin-top: 4%;
+    justify-content: space-between;
+    border: #0b2239 solid px;
+}
+#feed2 img{
+    border: #4ad295 solid px;
+    width: 60%;
+}
+.h{
+    border: red solid px;
+    margin-top: 10%;
+    margin-left: 10%;
+}
+
+.h2{
+    margin-top: 3%;
+    text-align: center;
+}
+
+* {box-sizing:border-box}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
 }
