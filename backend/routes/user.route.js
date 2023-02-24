@@ -22,6 +22,7 @@ userRouter.post("/register",async(req,res)=>{
         })
         
     } catch (error) {
+       
         res.send({msg:"something went wrong",error:error.message})
     }
 })
@@ -33,12 +34,13 @@ userRouter.post("/login",async(req,res)=>{
             bcrypt.compare(pass,user[0].pass,(err,result)=>{
                 if(result){
                     const token=jwt.sign({email:email,userid:user[0]._id},"hell")
-                    res.send({"msg":'logged in',Token:token})
+                    res.send({"msg":'logged in',token:token})
                 }else{
                     res.send({msg:"something went wrong"})
                 }
             })
         }else{
+            
             res.send({"msg":"wrong credentials"})
         }
     } catch (error) {

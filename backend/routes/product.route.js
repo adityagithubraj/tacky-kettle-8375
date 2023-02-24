@@ -2,18 +2,18 @@ const express=require("express");
 const app=express();
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-const noteRouter=express.Router();
-const {notemodel}=require("../model/notes.model")
+const productRouter=express.Router();
+const {productmodel}=require("../models/product.model")
 
 app.use(express.json());
 
-noteRouter.get("/",async(req,res)=>{
+productRouter.get("/",async(req,res)=>{
     const token=req.headers.authorization
     if(token){
         jwt.verify(token,"hell",async(err,decoded)=>{
             if(decoded){
-                const notes= await notemodel.find({author:decoded.userid})
-                res.send(notes)
+                const product= await productmodel.find({author:decoded.userid})
+                res.send(product)
             }else{
                 res.send({msg:"wrong token"})
             }
@@ -22,34 +22,34 @@ noteRouter.get("/",async(req,res)=>{
         res.send("Please login first")
     }
 })
-noteRouter.post("/create",async(req,res)=>{
+productRouter.post("/create",async(req,res)=>{
     try {
         const payloade=req.body;
-        const newnote= await notemodel(payloade);
-        newnote.save();
-        res.send({msg:"new note created"})
+        const newproduct= await productmodel(payloade);
+        newproduct.save();
+        res.send({msg:"new product created"})
     } catch (error) {
         res.send({msg:"something went wrong",error:error.message})
     }
 })
-noteRouter.patch("/update/:id",async(req,res)=>{
+productRouter.patch("/update/:id",async(req,res)=>{
     try {
         const id=req.params.id;
         const payloade=req.body;
-        await notemodel.findByIdAndUpdate(id,payloade)
-        res.send({"msg":`note with id:${id} has been updated`})
+        await productmodel.findByIdAndUpdate(id,payloade)
+        res.send({"msg":`product with id:${id} has been updated`})
     } catch (error) {
         res.send({msg:"something went wrong",error:error.message})
     
     }
 })
-noteRouter.delete('/delete/:id',async(req,res)=>{
-    const noteId=req.params.id;
-    await notemodel.findByIdAndDelete({_id:noteId})
-    res.send({"msg":`note with id:${noteId} has been deleted`})
+productRouter.delete('/delete/:id',async(req,res)=>{
+    const productId=req.params.id;
+    await productmodel.findByIdAndDelete({_id:productId})
+    res.send({"msg":`product with id:${productId} has been deleted`})
 })
 
 
 module.exports={
-    noteRouter
+    productRouter
 }
