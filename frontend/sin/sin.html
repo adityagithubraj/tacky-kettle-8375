@@ -16,7 +16,7 @@
 <input type="text" id="name" placeholder="name">
 <input type="text" id="email" placeholder="email">
 <input type="password" id="pass" placeholder="password"><br><br>
-<button class="but" onclick="sinFun()">Sign Up</button>
+<button onclick="sinFun()">Sign Up</button>
 <br><br>
 <a href="">LOGIN her</a>
     </div>
@@ -37,7 +37,7 @@ const sinFun=()=>{
         },
         body:JSON.stringify(payload)
     })
-    .then(res=>alert("sing in"))
+    .then(res=>alert("Sing in" ))
     .catch(err=>console.log(err))
 
 }

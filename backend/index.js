@@ -1,8 +1,8 @@
 const express=require("express");
 const connection=require("./config/db")
 const {userRouter}=require("./routes/user.route")
-// const {noteRouter}=require("./routes/product.route")
-// const {authenticate}=require("./middlewares/auth")
+const {productRouter}=require("./routes/product.route")
+const {authenticate}=require("./middlewares/auth")
 const app=express();
 const cors=require("cors")
 require("dotenv").config();
@@ -10,8 +10,8 @@ app.use(express.json());
 app.use(cors());
 
 app.use("/user",userRouter)
-// app.use(authenticate)
-// app.use("/notes",noteRouter)
+app.use(authenticate)
+app.use("/products",productRouter)
 
 
 
