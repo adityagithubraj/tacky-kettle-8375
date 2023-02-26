@@ -4,40 +4,27 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Notes</title>
+    <title>notes</title>
 </head>
 <body>
-    <div id="container">
-<h1>Notes page</h1>
+    <div id="parent">
+<h1 id="title">${value.title}</h1>
+<p id=" content">${value.content}</p>
+<p id=" author">${value.author}</p>
 
-<input type="text" id="title" placeholder="Notes titel..">
-<input type="text" id="content" placeholder="Notes content..">
-<input type="text" id="author" placeholder="Notes author">
-<button onclick="onAdd()">Log in</button>
     </div>
 </body>
 </html>
 <script>
-const onAdd=()=>{
-    const payload={
-  
-        titel:document.getElementById("title").value,
-        content:document.getElementById("content").value,
-        author:document.getElementById("author").value
+    const getData=()=>{
+        fetch("http://localhost:8080/products",{
+            headers:{
+                "Authorization":localStorage.getItem("token")
+            },
+        }).then(res=>res.json())
+        .then(res=>console.log(res))
+        .catch(err=>console.log(err))
     }
-    fetch("http://localhost:7070/notes/create",{
-        method:"POST",
-        headers:{
-            "Content-type":"application/json",
-            "Authorization":localStorage.getItem("token")
-        },
-        body:JSON.stringify(payload)
-    }).then(res=>res.json())
-    .then(res=>{
-        console.log(res)
-        localStorage.setItem("token",res.token)
-    })
-    .catch(err=>console.log(err))
-
-}
+    getData()
+    
 </script>
