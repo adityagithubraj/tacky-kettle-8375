@@ -1,0 +1,26 @@
+[
+    {
+        "name":"narzo",
+        "price":2500,
+
+        "company":"mi"
+    },
+    {
+        "name":"iphone",
+        "price":500,
+        
+        "company":"apple"
+    },
+    {
+        "name":"m1",
+        "price":100,
+        
+        "company":"mi"
+    },
+    {
+        "name":"iphone",
+        "price":1500,
+        
+        "company":"nokiya"
+    }
+]
