@@ -309,3 +309,14 @@ width: 7%;
   from {opacity: .4}
   to {opacity: 1}
 }
+
+#futer{
+background-color: #062d53;
+    border:  red solid px;
+    display: flex;
+    justify-content: space-around
+}
+.futer img{
+    width: 100%;
+    
+}
